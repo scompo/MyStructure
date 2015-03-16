@@ -74,8 +74,8 @@ public abstract class AbstractDataContainer<T extends DoubleKeyed<ID1, ID2>, ID1
 
 	@Override
 	public String toString() {
-		return "AbstractDataContainer [mapByFirstKey=" + mapByFirstKey.keySet()
-				+ ", mapBySecondKey=" + mapBySecondKey.keySet() + "]";
+		return "AbstractDataContainer [mapByFirstKey=" + mapByFirstKey
+				+ ", mapBySecondKey=" + mapBySecondKey + "]";
 	}
 
 }
