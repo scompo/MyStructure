@@ -5,7 +5,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class MyDataStructure implements SuperMap<MyData> {
+public class MyDataStructure implements DataContainer<MyData> {
 
 	private Map<Long, List<MyData>> mapByFirstKey = new HashMap<Long, List<MyData>>();
 

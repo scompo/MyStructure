@@ -2,7 +2,7 @@ package it.scompo.MyStructure;
 
 import java.util.List;
 
-public interface SuperMap<T> {
+public interface DataContainer<T> {
 	
 	void addData(T data);
 
