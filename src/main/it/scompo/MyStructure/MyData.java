@@ -2,7 +2,7 @@ package it.scompo.MyStructure;
 
 import java.math.BigDecimal;
 
-public class MyData {
+public class MyData implements DoubleKeyed<Long,Long>{
 
 	private Long keyOne;
 

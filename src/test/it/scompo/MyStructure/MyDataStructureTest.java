@@ -117,6 +117,8 @@ public class MyDataStructureTest {
 	public void testGetAll() {
 
 		MyDataStructure myDataStructure = createData();
+		
+		System.err.println(myDataStructure);
 
 		List<MyData> res = myDataStructure.getAllData();
 
