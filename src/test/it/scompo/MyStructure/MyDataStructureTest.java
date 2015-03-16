@@ -13,12 +13,12 @@ import static it.scompo.MyStructure.TestConstants.TEST_KEY_TWO_1;
 import static it.scompo.MyStructure.TestConstants.TEST_KEY_TWO_2;
 import static it.scompo.MyStructure.TestConstants.TEST_KEY_TWO_3;
 import static it.scompo.MyStructure.TestConstants.TEST_KEY_TWO_4;
-
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.junit.After;
@@ -117,7 +117,7 @@ public class MyDataStructureTest {
 	public void testGetAll() {
 
 		MyDataStructure myDataStructure = createData();
-		
+
 		System.err.println(myDataStructure);
 
 		List<MyData> res = myDataStructure.getAllData();
@@ -140,6 +140,39 @@ public class MyDataStructureTest {
 
 		assertNotNull(res);
 		assertTrue(res.isEmpty());
+	}
+
+	@Test
+	public void testConstructorWithList() {
+
+		List<MyData> data = new ArrayList<MyData>();
+		data.add(TEST_DATA_1);
+		data.add(TEST_DATA_2);
+		data.add(TEST_DATA_3);
+		data.add(TEST_DATA_4);
+
+		MyDataStructure dataStructure = new MyDataStructure(data);
+
+		List<MyData> allData = dataStructure.getAllData();
+		
+		assertEquals(data.size(), allData.size());
+		assertTrue(allData.contains(TEST_DATA_1));
+		assertTrue(allData.contains(TEST_DATA_2));
+		assertTrue(allData.contains(TEST_DATA_3));
+		assertTrue(allData.contains(TEST_DATA_4));
+	}
+
+	@Test
+	public void testConstructorWithListNull() {
+
+		List<MyData> data = null;
+
+		MyDataStructure dataStructure = new MyDataStructure(data);
+
+		List<MyData> allData = dataStructure.getAllData();
+
+		assertNotNull(allData);
+		assertTrue(allData.isEmpty());
 	}
 
 	private static MyDataStructure createData() {

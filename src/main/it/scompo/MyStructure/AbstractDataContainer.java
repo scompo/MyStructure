@@ -12,6 +12,22 @@ public abstract class AbstractDataContainer<T extends DoubleKeyed<ID1, ID2>, ID1
 
 	private Map<ID2, T> mapBySecondKey = new HashMap<ID2, T>();
 
+	public AbstractDataContainer(List<T> data) {
+
+		if (data != null) {
+
+			for (T t : data) {
+
+				this.addData(t);
+			}
+		}
+
+	}
+
+	public AbstractDataContainer() {
+
+	}
+
 	@Override
 	public synchronized void addData(T data) {
 
@@ -43,7 +59,7 @@ public abstract class AbstractDataContainer<T extends DoubleKeyed<ID1, ID2>, ID1
 
 	@Override
 	public List<T> getAllByKeyOne(ID1 keyOne) {
-		
+
 		List<T> list = new ArrayList<T>();
 
 		List<T> tmp = mapByFirstKey.get(keyOne);
@@ -68,7 +84,7 @@ public abstract class AbstractDataContainer<T extends DoubleKeyed<ID1, ID2>, ID1
 
 	@Override
 	public T getByKeyTwo(ID2 keyTwo) {
-		
+
 		return mapBySecondKey.get(keyTwo);
 	}
 
