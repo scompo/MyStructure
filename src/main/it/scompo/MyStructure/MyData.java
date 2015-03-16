@@ -59,5 +59,36 @@ public class MyData implements DoubleKeyed<Long,Long>{
 		return "MyData [keyOne=" + keyOne + ", keyTwo=" + keyTwo + ", data1="
 				+ data1 + ", data2=" + data2 + ", data3=" + data3 + "]";
 	}
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((keyOne == null) ? 0 : keyOne.hashCode());
+		result = prime * result + ((keyTwo == null) ? 0 : keyTwo.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		MyData other = (MyData) obj;
+		if (keyOne == null) {
+			if (other.keyOne != null)
+				return false;
+		} else if (!keyOne.equals(other.keyOne))
+			return false;
+		if (keyTwo == null) {
+			if (other.keyTwo != null)
+				return false;
+		} else if (!keyTwo.equals(other.keyTwo))
+			return false;
+		return true;
+	}
 	
 }
