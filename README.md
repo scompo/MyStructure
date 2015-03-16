@@ -1,0 +1,3 @@
+# MyStructure
+
+test project
