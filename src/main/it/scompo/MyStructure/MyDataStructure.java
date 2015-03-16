@@ -5,8 +5,7 @@ public class MyDataStructure extends AbstractDataContainer<MyData, Long, Long> i
 
 	@Override
 	public String toString() {
-		return "MyDataStructure [toString()=" + super.toString() + "]";
+		return "MyDataStructure [getAllData()=" + getAllData() + "]";
 	}
-
 
 }
